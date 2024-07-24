@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class Moverse : MonoBehaviour
 {
-    public float runSpeed = 2;
 
-    public float jumpSpeed = 3;
+    private Rigidbody2D rb2D;
 
-    Rigidbody2D rb2D;
+    [Header("MOVIMIENTO")]
+    private float movimientoHorizontal = 0f;
+
+    [SerializeField] private float velocidaDeMovimiento;
+    [SerializeField] private float suavizandoMovimiento;
+
+    private Vector3 velocidad = Vector3.zero;
+
+    private bool mirandoDerecha = true;
+
+
+    [Header("Salto")]
+
+    [SerializeField] private float fuerzaDeSalto;
+    [SerializeField] private LayerMask Suelo;
+    [SerializeField] private Transform controladorSuelo;
+    [SerializeField] private Vector3 dimensionesCaja;
+    [SerializeField] private bool enSuelo;
+
+    private bool salto = false;
 
 
     [Header("Animacion")]
@@ -25,26 +43,65 @@ public class Moverse : MonoBehaviour
     }
 
    
-    void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKey("d") || Input.GetKey("right")) 
+
+        movimientoHorizontal = Input.GetAxisRaw("Horizontal") * velocidaDeMovimiento;
+        animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontal));
+
+        if (Input.GetButtonDown("Jump"))
         {
-            rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
+            salto = true;
         }
 
-        else if (Input.GetKey("a") || Input.GetKey("left"))
-        {
-            rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
-        }
-        else
-        {
-            rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+    
+        
+    }
 
-        }
-        if (Input.GetKey("space")  && Verificarelsuelo.estaEnelSuelo) 
+    private void FixedUpdate()
+    {
+        enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, Suelo);
+
+       
+        Mover(movimientoHorizontal * Time.fixedDeltaTime, salto);
+
+        salto = false;
+    }
+
+    private void Mover(float mover, bool saltar)
+    {
+        Vector3 velocidadObjetivo = new Vector2(mover, rb2D.velocity.y);
+        rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, velocidadObjetivo, ref velocidad, suavizandoMovimiento);
+
+        if (mover >0 && !mirandoDerecha)
         {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+
+            Girar();
+
+        }else if (mover<0&&mirandoDerecha){
+
+            Girar();
+        
+        }
+
+        if(enSuelo&& saltar)
+        {
+            enSuelo = false;
+            rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
 
         }
     }
+
+    private void Girar()
+    {
+        mirandoDerecha = !mirandoDerecha;
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
+       
+    }
+
+ 
 }
+
+

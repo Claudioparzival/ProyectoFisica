@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 406505564}
   - component: {fileID: 406505568}
   - component: {fileID: 406505567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,27 +1124,21 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5e65f2dfc5b76434a87ad247b0c2ec6e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 3045001923454373135, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: 3045001923454373135, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -39983623799505075, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 30
     m_Data: {fileID: 772467259971446145, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -2615569002567638836, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: -2615569002567638836, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 2
-    m_Data: {fileID: -5125620877619029284, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: -5125620877619029284, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 6999343348047764492, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: 6999343348047764492, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 19
-    m_Data: {fileID: 4373040517201769238, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: 4373040517201769238, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 9
-    m_Data: {fileID: 5714336816974921154, guid: fc584d329b77b9545b9c9c8bb829e553,
-      type: 3}
+    m_Data: {fileID: 5714336816974921154, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 64
     m_Data:
@@ -2080,7 +2074,7 @@ Animator:
   m_GameObject: {fileID: 1042512540}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b3fc61116bbe084d8eea7bee9af871c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5ed030efe4362164c869725a4e94e91d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2135,8 +2129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: cd947491a13509945aa1b644f9db3ef2,
-    type: 3}
+  m_Sprite: {fileID: 4477874643475762173, guid: 2ebf776870f91d640a489d0788c6b3dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2201,7 +2194,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.15, y: 0.32}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2221,8 +2214,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a340b2b1fcc9c4190740f152e646c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 2
-  jumpSpeed: 3
+  velocidaDeMovimiento: 200
+  suavizandoMovimiento: 0.3
+  fuerzaDeSalto: 200
+  Suelo:
+    serializedVersion: 2
+    m_Bits: 8
+  controladorSuelo: {fileID: 1107435911}
+  dimensionesCaja: {x: 1, y: 0.25, z: 0}
+  enSuelo: 0
 --- !u!1 &1107435910
 GameObject:
   m_ObjectHideFlags: 0
