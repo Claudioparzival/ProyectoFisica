@@ -47,7 +47,7 @@ public class Moverse : MonoBehaviour
     {
 
         movimientoHorizontal = Input.GetAxisRaw("Horizontal") * velocidaDeMovimiento;
-        animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontal));
+        animator.SetFloat("horizontal", Mathf.Abs(movimientoHorizontal));
 
         if (Input.GetButtonDown("Jump"))
         {
