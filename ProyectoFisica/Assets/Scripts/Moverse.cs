@@ -11,10 +11,17 @@ public class Moverse : MonoBehaviour
     Rigidbody2D rb2D;
 
 
+    [Header("Animacion")]
+    private Animator animator;
+
+
+
+
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
    
