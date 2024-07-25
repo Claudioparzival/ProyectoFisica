@@ -10,24 +10,33 @@ public class Verificarelsuelo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        estaEnelSuelo = true;   
+
+        if (collision.CompareTag("Suelo"))
+        {
+            estaEnelSuelo = true;
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        estaEnelSuelo = false;  
+        if (collision.CompareTag("Suelo"))
+        {
+            estaEnelSuelo = false;
+
+        }
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
