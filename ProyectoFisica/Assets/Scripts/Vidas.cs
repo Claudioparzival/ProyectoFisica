@@ -22,18 +22,8 @@ public class Vidas : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            TomarDaño(valorPrueba);
-        }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            CurarVida(valorPrueba);
-        }
-    }
+   
 
     // Update is called once per frame
     public void TomarDaño(int cantidadDaño)

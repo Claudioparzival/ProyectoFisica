@@ -28,8 +28,7 @@ public class mover_enemiigo : MonoBehaviour
 
     public bool mirandoALaDerecha = true;
 
-
-
+    
 
 
 
@@ -70,5 +69,14 @@ public class mover_enemiigo : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(controladorAbajo.transform.position, controladorAbajo.transform.position + transform.up * -1 * distanciaAbajo);
         Gizmos.DrawLine(controladorEnfrente.transform.position, controladorEnfrente.transform.position + transform.right* distanciaEnfrente);
+    }
+
+    private void OncCollision2D(Collider2D other)
+    {
+        if (other.CompareTag("player"))
+        {
+            other.GetComponent<Vidas>().TomarDaño(1);
+            Debug.Log("sexo");
+        }
     }
 }
