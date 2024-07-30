@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fondo
+    uniqueID: 4107769987
+    locked: 0
+  - name: Chica
+    uniqueID: 2887123553
+    locked: 0
