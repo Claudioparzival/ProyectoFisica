@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ganar : MonoBehaviour
 {
     // Este método se llama cuando el jugador entra en el área del Trigger Collider
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
