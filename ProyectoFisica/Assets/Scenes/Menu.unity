@@ -202,8 +202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 1719143481}
+        m_TargetAssemblyTypeName: Salir, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: Jugar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0cb4bf608a4f3e449d952bcdc2d3bb9, type: 2}
   m_sharedMaterial: {fileID: -1631280825593405590, guid: f0cb4bf608a4f3e449d952bcdc2d3bb9, type: 2}
@@ -931,6 +931,7 @@ GameObject:
   - component: {fileID: 1719143479}
   - component: {fileID: 1719143478}
   - component: {fileID: 1719143477}
+  - component: {fileID: 1719143481}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1022,6 +1023,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1719143481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719143476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a99b67112daa634fb2bf97ef2627a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726541753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0cb4bf608a4f3e449d952bcdc2d3bb9, type: 2}
   m_sharedMaterial: {fileID: -1631280825593405590, guid: f0cb4bf608a4f3e449d952bcdc2d3bb9, type: 2}
