@@ -49,7 +49,7 @@ public class Vidas : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            Destroy(gameObject);
+            MuerteJugadorEvento();
         }
     }
 
