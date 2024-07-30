@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class Vidas : MonoBehaviour
 {
@@ -14,12 +15,22 @@ public class Vidas : MonoBehaviour
     public UnityEvent<int> cambioVida;
 
     public int valorPrueba;
-    
+
+    public event EventHandler MuerteJugador;
     private void Start()
     {
         vidaActual = vidaMaxima = 0;
         cambioVida.Invoke(vidaActual);
 
+    }
+
+    private void Prueba(int valorPrueba)
+    {
+        if (Input.GetButtonDown("v")){
+
+            TomarDaño(valorPrueba);
+
+        }
     }
 
 
@@ -49,17 +60,10 @@ public class Vidas : MonoBehaviour
         }
     }
 
-    public void CurarVida(int cantidadCuracion)
+    public void MuerteJugadorEvento()
     {
-        int vidaTemporal = vidaActual + cantidadCuracion;
-
-        if (vidaTemporal > vidaMaxima)
-        {
-            vidaActual = vidaMaxima;
-        }
-        else
-        {
-            vidaActual = vidaTemporal;
-        }
+        MuerteJugador?.Invoke(this, EventArgs.Empty);
     }
+
+
 }

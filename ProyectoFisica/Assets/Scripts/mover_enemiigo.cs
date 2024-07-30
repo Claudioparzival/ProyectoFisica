@@ -76,7 +76,6 @@ public class mover_enemiigo : MonoBehaviour
         if (other.CompareTag("player"))
         {
             other.GetComponent<Vidas>().TomarDaño(1);
-            Debug.Log("sexo");
         }
     }
 }

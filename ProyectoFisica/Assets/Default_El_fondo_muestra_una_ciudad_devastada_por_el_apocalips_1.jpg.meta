@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Default_El_fondo_muestra_una_ciudad_devastada_por_el_apocalips_1_0: -5119141517234239518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
