@@ -19,19 +19,12 @@ public class Vidas : MonoBehaviour
     public event EventHandler MuerteJugador;
     private void Start()
     {
-        vidaActual = vidaMaxima = 0;
         cambioVida.Invoke(vidaActual);
 
     }
 
-    private void Prueba(int valorPrueba)
-    {
-        if (Input.GetButtonDown("v")){
+    
 
-            TomarDaño(valorPrueba);
-
-        }
-    }
 
 
    

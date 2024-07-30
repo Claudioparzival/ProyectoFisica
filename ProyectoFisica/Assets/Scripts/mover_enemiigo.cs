@@ -71,11 +71,12 @@ public class mover_enemiigo : MonoBehaviour
         Gizmos.DrawLine(controladorEnfrente.transform.position, controladorEnfrente.transform.position + transform.right* distanciaEnfrente);
     }
 
-    private void OncCollision2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("player"))
+        if (other.transform.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<Vidas>().TomarDaño(1);
+            other.transform.gameObject.GetComponent<Vidas>().TomarDaño(1);
+            Debug.Log("hola mundo");
         }
     }
 }
